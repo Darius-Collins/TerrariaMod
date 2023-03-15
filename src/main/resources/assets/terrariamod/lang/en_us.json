@@ -1,12 +1,14 @@
 {
   "item.terrariamod.raw_tungsten" : "Raw Tungsten",
-  "item.terrariamod.raw_platinum" : "Raw Platinum",
   "item.terrariamod.tungsten_ingot" : "Tungsten Ingot",
-  "item.terrariamod.platinum_ingot" : "Platinum Ingot",
 
-  "block.terrariamod.block_of_platinum": "Block of Platinum",
+
+
   "block.terrariamod.platinum_ore": "Platinum Ore",
   "block.terrariamod.deepslate_platinum_ore": "Deepslate Platinum Ore",
+  "item.terrariamod.raw_platinum" : "Raw Platinum",
+  "item.terrariamod.platinum_ingot" : "Platinum Ingot",
+  "block.terrariamod.block_of_platinum": "Block of Platinum",
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }
