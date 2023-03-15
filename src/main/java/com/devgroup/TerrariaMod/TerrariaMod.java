@@ -1,5 +1,6 @@
 package com.devgroup.TerrariaMod;
 
+import com.devgroup.TerrariaMod.blocks.ModBlocks;
 import com.devgroup.TerrariaMod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -34,6 +35,7 @@ public class TerrariaMod
     public TerrariaMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModBlocks.register(modEventBus);
 
         ModItems.register(modEventBus);
 

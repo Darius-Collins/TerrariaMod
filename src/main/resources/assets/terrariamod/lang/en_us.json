@@ -2,5 +2,9 @@
   "item.terrariamod.raw_tungsten" : "Raw Tungsten",
   "item.terrariamod.tungsten_ingot" : "Tungsten Ingot",
 
+  "block.terrariamod.block_of_platinum": "Block of Platinum",
+  "block.terrariamod.platinum_ore": "Platinum ore",
+  "block.terrariamod.deepslate_platinum_ore": "Deesplate Platinum Ore",
+
   "itemGroup.terraria_tab" : "Terraria Items"
 }
