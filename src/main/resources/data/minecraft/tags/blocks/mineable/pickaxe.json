@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "terrariamod:block_of_platinum",
+    "terrariamod:platinum_ore",
+    "terrariamod:deepslate_platinum_ore"
+  ]
+}
