@@ -21,6 +21,13 @@ public class ModItems
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
 
+    public static final RegistryObject<Item> RAW_PLATINUM = ITEMS.register("raw_platinum",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
