@@ -27,6 +27,9 @@ public class ModItems
     public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
 
+    public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
+            () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus)
     {

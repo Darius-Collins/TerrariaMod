@@ -9,7 +9,7 @@ public class ModCreativeModeTab
     public static final CreativeModeTab TERRARIA_TAB = new CreativeModeTab("terraria_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.RAW_TUNGSTEN.get());
+            return new ItemStack(ModItems.TERRARIA_LOGO.get());
         }
     };
 }
