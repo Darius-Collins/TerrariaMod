@@ -1,0 +1,16 @@
+{
+  "type" : "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item" : "terrariamod:tungsten_ingot"
+    }
+  },
+  "result": {
+    "item" : "terrariamod:block_of_tungsten"
+  }
+}

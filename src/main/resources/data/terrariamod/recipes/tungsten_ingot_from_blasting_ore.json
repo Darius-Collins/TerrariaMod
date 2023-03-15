@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredient":
   {
-    "item": "terrariamod:raw_tungsten"
+    "item": "terrariamod:tungsten_ore"
   },
   "result": "terrariamod:tungsten_ingot"
 }

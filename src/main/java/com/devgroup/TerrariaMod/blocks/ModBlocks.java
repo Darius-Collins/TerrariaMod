@@ -32,6 +32,17 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
+    public static final RegistryObject<Block> BLOCK_OF_TUNGSTEN = registerBlock("block_of_tungsten",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+
+    public static final RegistryObject<Block> TUNGSTEN_ORE = registerBlock("tungsten_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+
+    public static final RegistryObject<Block> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BlOCKS.register(name, block);

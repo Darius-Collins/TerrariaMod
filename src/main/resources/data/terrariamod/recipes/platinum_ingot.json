@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "terrariamod:block_of_platinum"
+    }
+  ],
+  "result":
+  {
+    "count": 9,
+    "item": "terrariamod:platinum_ingot"
+  }
+}

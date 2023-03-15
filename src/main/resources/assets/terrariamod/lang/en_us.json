@@ -1,8 +1,9 @@
 {
+  "block.terrariamod.tungsten_ore" : "Tungsten Ore",
+  "block.terrariamod.deepslate_tungsten_ore" : "Deepslate Tungsten Ore",
   "item.terrariamod.raw_tungsten" : "Raw Tungsten",
   "item.terrariamod.tungsten_ingot" : "Tungsten Ingot",
-
-
+  "block.terrariamod.block_of_tungsten" : "Block Of Tungsten",
 
   "block.terrariamod.platinum_ore": "Platinum Ore",
   "block.terrariamod.deepslate_platinum_ore": "Deepslate Platinum Ore",

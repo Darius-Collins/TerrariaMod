@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredient":
   {
-    "item": "terrariamod:raw_tungsten"
+    "item": "terrariamod:platinum_ore"
   },
-  "result": "terrariamod:tungsten_ingot"
+  "result": "terrariamod:platinum_ingot"
 }
