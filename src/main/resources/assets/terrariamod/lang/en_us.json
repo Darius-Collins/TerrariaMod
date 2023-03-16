@@ -5,6 +5,8 @@
   "item.terrariamod.tungsten_ingot" : "Tungsten Ingot",
   "block.terrariamod.block_of_tungsten" : "Block Of Tungsten",
   "item.terrariamod.tungsten_pickaxe": "Tungsten Pickaxe",
+  "item.terrariamod.tungsten_axe": "Tungsten Axe",
+  "item.terrariamod.tungsten_sword": "Tungsten Sword",
 
   "block.terrariamod.platinum_ore": "Platinum Ore",
   "block.terrariamod.deepslate_platinum_ore": "Deepslate Platinum Ore",

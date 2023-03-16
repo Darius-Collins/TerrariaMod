@@ -1,6 +1,6 @@
 {
   "parent" : "item/handheld",
   "textures" : {
-    "layer0" : "terrariamod:item/platinum_pickaxe"
+    "layer0" : "terrariamod:item/tungsten_axe"
   }
 }

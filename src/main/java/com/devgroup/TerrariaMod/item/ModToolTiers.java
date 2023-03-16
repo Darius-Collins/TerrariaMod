@@ -17,16 +17,19 @@ public class ModToolTiers {
 
     static {
         PLATINUM = TierSortingRegistry.registerTier(
-                new ForgeTier(2, 400, 4, 2, 10,
+                new ForgeTier(3, 400, 9, 1, 24,
                         ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
                 new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.IRON), List.of());
     }
 
     static {
         TUNGSTEN = TierSortingRegistry.registerTier(
-                new ForgeTier(2, 300, 3, 1, 10,
+                new ForgeTier(2, 300, 6, 1, 24,
                         ModTags.Blocks.NEEDS_TUNGSTEN_TOOL, () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())),
                 new ResourceLocation(TerrariaMod.MOD_ID, "tungsten"), List.of(Tiers.IRON), List.of());
+
+
+
     }
 
 }
