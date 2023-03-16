@@ -3,7 +3,9 @@ package com.devgroup.TerrariaMod.item;
 import com.devgroup.TerrariaMod.TerrariaMod;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -30,6 +32,9 @@ public class ModItems
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.PLATINUM, 2, 3f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static void register(IEventBus eventBus)
     {

@@ -1,6 +1,7 @@
 package com.devgroup.TerrariaMod.item;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
+import com.devgroup.TerrariaMod.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -15,10 +16,9 @@ public class ModToolTiers {
 
     static {
         PLATINUM = TierSortingRegistry.registerTier(
-                new ForgeTier(2, 300, 6.3, 3, 24,
-                        null, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
-                new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.IRON), List.of();
-        )
+                new ForgeTier(2, 300, 1, 3, 24,
+                        ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
+                new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.IRON), List.of());
     }
 
 }
