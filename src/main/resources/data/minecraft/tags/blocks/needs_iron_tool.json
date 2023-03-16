@@ -1,6 +1,8 @@
 {
-  "replace": false,
+  "replace": true,
   "values": [
-
+    "terrariamod:block_of_tungsten",
+    "terrariamod:tungsten_ore",
+    "terrariamod:deepslate_tungsten_ore"
   ]
 }
