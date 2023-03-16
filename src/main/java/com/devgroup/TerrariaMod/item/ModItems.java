@@ -46,7 +46,9 @@ public class ModItems
             () -> new SwordItem(ModToolTiers.TUNGSTEN, 5, -3f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
-
+    public static final RegistryObject<ShovelItem> TUNGSTEN_SHOVEL = ITEMS.register("tungsten_shovel",
+            () -> new ShovelItem(ModToolTiers.TUNGSTEN, 3, -3f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static void register(IEventBus eventBus)
     {
