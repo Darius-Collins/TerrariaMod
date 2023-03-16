@@ -36,6 +36,10 @@ public class ModItems
             () -> new PickaxeItem(ModToolTiers.PLATINUM, 2, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
+    public static final RegistryObject<Item> TUNGSTEN_PICKAXE = ITEMS.register("tungsten_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.TUNGSTEN, 2, 3f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
