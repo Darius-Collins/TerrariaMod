@@ -24,7 +24,7 @@ public class ModToolTiers {
 
     static {
         TUNGSTEN = TierSortingRegistry.registerTier(
-                new ForgeTier(2, 300, 6, 1, 24,
+                new ForgeTier(2, 300, 7, 1, 24,
                         ModTags.Blocks.NEEDS_TUNGSTEN_TOOL, () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())),
                 new ResourceLocation(TerrariaMod.MOD_ID, "tungsten"), List.of(Tiers.IRON), List.of());
 
