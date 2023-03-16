@@ -26,11 +26,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+                    .strength(2.5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
     public static final RegistryObject<Block> BLOCK_OF_TUNGSTEN = registerBlock("block_of_tungsten",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
@@ -38,11 +38,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TUNGSTEN_ORE = registerBlock("tungsten_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+                    .strength(2.5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.TERRARIA_TAB);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BlOCKS.register(name, block);
