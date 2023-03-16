@@ -1,6 +1,9 @@
 {
-  "replace": false,
+  "replace": true,
   "values": [
-
+    "terrariamod:platinum_ore",
+    "terrariamod:deepslate_platinum_ore",
+    "terrariamod:tungsten_ore",
+    "terrariamod:deepslate_tungsten_ore"
   ]
 }
