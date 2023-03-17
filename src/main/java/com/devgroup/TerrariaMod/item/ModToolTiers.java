@@ -2,6 +2,7 @@ package com.devgroup.TerrariaMod.item;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
 import com.devgroup.TerrariaMod.util.ModTags;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
@@ -33,7 +34,7 @@ public class ModToolTiers {
 
     static {
         COPPER = TierSortingRegistry.registerTier(
-                new ForgeTier(1, 80, 4, 1, 10,
+                new ForgeTier(1, 250, 4, 1, 10,
                         ModTags.Blocks.NEEDS_COPPER_TOOL, () -> Ingredient.of(Items.COPPER_INGOT.getDefaultInstance())),
                 new ResourceLocation(TerrariaMod.MOD_ID, "copper"), List.of(Tiers.STONE), List.of());
     }

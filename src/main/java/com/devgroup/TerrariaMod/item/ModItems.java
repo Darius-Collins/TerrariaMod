@@ -81,7 +81,7 @@ public class ModItems
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 1, -2.4f,
+            () -> new PickaxeItem(ModToolTiers.COPPER, 1, -2.8f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static final RegistryObject<AxeItem> COPPER_AXE = ITEMS.register("copper_axe",
