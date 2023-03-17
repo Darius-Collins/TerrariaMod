@@ -28,6 +28,11 @@
   "item.terrariamod.copper_hoe" : "Copper Hoe",
   "item.terrariamod.copper_shovel" : "Copper Shovel",
 
+  "item.terrariamod.copper_helmet" : "Copper Helmet",
+  "item.terrariamod.copper_chestplate" : "Copper Chestplate",
+  "item.terrariamod.copper_leggings" : "Copper Leggings",
+  "item.terrariamod.copper_boots" : "Copper Boots",
+
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }

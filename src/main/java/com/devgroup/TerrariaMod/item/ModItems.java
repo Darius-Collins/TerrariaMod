@@ -1,7 +1,12 @@
 package com.devgroup.TerrariaMod.item;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
+import com.devgroup.TerrariaMod.base.ModArmorMaterial;
+import net.minecraft.client.Minecraft;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -90,11 +95,34 @@ public class ModItems
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<ArmorItem> COPPER_HELMET = ITEMS.register("copper_helmet",
+            () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.HEAD, props()));
+    public static final RegistryObject<ArmorItem> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate",
+            () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.CHEST, props()));
+    public static final RegistryObject<ArmorItem> COPPER_LEGGINGS = ITEMS.register("copper_leggings",
+            () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.LEGS, props()));
+    public static final RegistryObject<ArmorItem> COPPER_BOOTS = ITEMS.register("copper_boots",
+            () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.FEET, props()));
 
 
+    private static Item.Properties props() {return new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB);}
 
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
+    }
+
+
+
+    public static class ArmorTiers {
+        public static final ArmorMaterial COPPER = new ModArmorMaterial(
+                "copper",
+                500,
+                new int[] { 20, 40, 50, 10 },
+                300,
+                SoundEvents.ARMOR_EQUIP_IRON,
+                0.0f,
+                0.0f,
+                () -> Ingredient.of(Items.COPPER_INGOT));
     }
 }
