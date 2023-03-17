@@ -67,14 +67,30 @@ public class ModItems
             () -> new HoeItem(ModToolTiers.PLATINUM, -1, -0.7f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
-    public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 3, -2.4f,
+    public static final RegistryObject<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword",
+            () -> new SwordItem(ModToolTiers.COPPER, 3, -2.8f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
+    public static final RegistryObject<ShovelItem> COPPER_SHOVEL = ITEMS.register("copper_shovel",
+            () -> new ShovelItem(ModToolTiers.COPPER, 3, -2.8f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
+    public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.COPPER, 1, -2.4f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
+    public static final RegistryObject<AxeItem> COPPER_AXE = ITEMS.register("copper_axe",
+            () -> new AxeItem(ModToolTiers.COPPER, 6, -3.2f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
+    public static final RegistryObject<HoeItem> COPPER_HOE = ITEMS.register("copper_hoe",
+            () -> new HoeItem(ModToolTiers.COPPER, -1, -2f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));
+
+
 
 
     public static void register(IEventBus eventBus)

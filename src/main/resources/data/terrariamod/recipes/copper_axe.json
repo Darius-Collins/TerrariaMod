@@ -9,11 +9,11 @@
     }
   },
   "pattern": [
-    "XXX",
-    " # ",
+    "XX ",
+    "X# ",
     " # "
   ],
   "result": {
-    "item": "terrariamod:copper_pickaxe"
+    "item": "terrariamod:copper_axe"
   }
 }

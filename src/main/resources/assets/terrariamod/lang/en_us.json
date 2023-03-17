@@ -23,6 +23,10 @@
   "item.terrariamod.platinum_hoe": "Platinum Hoe",
 
   "item.terrariamod.copper_pickaxe" : "Copper Pickaxe",
+  "item.terrariamod.copper_sword" : "Copper Sword",
+  "item.terrariamod.copper_axe" : "Copper Axe",
+  "item.terrariamod.copper_hoe" : "Copper Hoe",
+  "item.terrariamod.copper_shovel" : "Copper Shovel",
 
 
   "itemGroup.terraria_tab" : "Terraria Items"

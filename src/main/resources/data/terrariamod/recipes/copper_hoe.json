@@ -5,15 +5,15 @@
       "item": "minecraft:stick"
     },
     "X": {
-      "item": "minecraft:copper_ingot"
+      "item": "terrariamod:tungsten_ingot"
     }
   },
   "pattern": [
-    "XXX",
-    " # ",
-    " # "
+    "XX",
+    " #",
+    " #"
   ],
   "result": {
-    "item": "terrariamod:copper_pickaxe"
+    "item": "terrariamod:copper_hoe"
   }
 }
