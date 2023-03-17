@@ -14,6 +14,10 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_TUNGSTEN_TOOL
                 = tag("needs_tungsten_tool");
 
+        public static final TagKey<Block> NEEDS_COPPER_TOOL
+                = tag("needs_copper_tool");
+
+
         private  static TagKey<Block> tag(String name){
             return BlockTags.create(new ResourceLocation(TerrariaMod.MOD_ID, name));
         }
