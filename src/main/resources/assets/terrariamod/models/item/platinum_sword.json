@@ -1,0 +1,6 @@
+{
+  "parent" : "item/handheld",
+  "textures" : {
+    "layer0" : "terrariamod:item/platinum_sword"
+  }
+}
