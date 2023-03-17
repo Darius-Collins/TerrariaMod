@@ -92,9 +92,6 @@ public class ModItems
             () -> new HoeItem(ModToolTiers.COPPER, -1, -2f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
-            () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<ArmorItem> COPPER_HELMET = ITEMS.register("copper_helmet",
             () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate",
@@ -103,6 +100,15 @@ public class ModItems
             () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> COPPER_BOOTS = ITEMS.register("copper_boots",
             () -> new ArmorItem(ArmorTiers.COPPER, EquipmentSlot.FEET, props()));
+
+    public static final RegistryObject<Item> RAW_METEORITE = ITEMS.register("raw_meteorite",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_INGOT = ITEMS.register("meteorite_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+    public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
+            () -> new Item(new Item.Properties()));
 
 
     private static Item.Properties props() {return new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB);}

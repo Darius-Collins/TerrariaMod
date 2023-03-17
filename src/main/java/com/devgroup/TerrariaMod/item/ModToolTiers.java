@@ -2,7 +2,6 @@ package com.devgroup.TerrariaMod.item;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
 import com.devgroup.TerrariaMod.util.ModTags;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
@@ -13,13 +12,13 @@ import net.minecraftforge.common.TierSortingRegistry;
 
 import java.util.List;
 
-public class ModToolTiers {
+public enum ModToolTiers implements Tier {;
     public static Tier PLATINUM;
     public static Tier TUNGSTEN;
     public static Tier COPPER;
 
     static {
-        PLATINUM = TierSortingRegistry.registerTier(
+       PLATINUM  = TierSortingRegistry.registerTier(
                 new ForgeTier(3, 1000, 9, 1, 24,
                         ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
                 new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.DIAMOND), List.of());
@@ -39,4 +38,33 @@ public class ModToolTiers {
                 new ResourceLocation(TerrariaMod.MOD_ID, "copper"), List.of(Tiers.STONE), List.of());
     }
 
+    @Override
+    public int getUses() {
+        return getUses();
+    }
+
+    @Override
+    public float getSpeed() {
+        return getSpeed();
+    }
+
+    @Override
+    public float getAttackDamageBonus() {
+        return getAttackDamageBonus();
+    }
+
+    @Override
+    public int getLevel() {
+        return getLevel();
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return getEnchantmentValue();
+    }
+
+    @Override
+    public Ingredient getRepairIngredient() {
+        return null;
+    }
 }

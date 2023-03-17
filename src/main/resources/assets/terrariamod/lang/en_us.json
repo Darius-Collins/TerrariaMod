@@ -33,6 +33,10 @@
   "item.terrariamod.copper_leggings" : "Copper Leggings",
   "item.terrariamod.copper_boots" : "Copper Boots",
 
+  "block.terrariamod.meteorite_block": "Meteorite Block",
+  "block.terrariamod.meteorite_ore": "Meteorite Ore",
+  "item.terrariamod.raw_meteorite": "Raw Meteorite",
+  "item.terrariamod.meteorite_ingot": "Meteorite Ingot",
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }

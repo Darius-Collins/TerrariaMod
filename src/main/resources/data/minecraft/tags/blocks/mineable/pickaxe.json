@@ -6,6 +6,8 @@
     "terrariamod:deepslate_platinum_ore",
     "terrariamod:block_of_tungsten",
     "terrariamod:tungsten_ore",
-    "terrariamod:deepslate_tungsten_ore"
+    "terrariamod:deepslate_tungsten_ore",
+    "terrariamod:meteorite_block",
+    "terrariamod:meteorite_ore"
   ]
 }

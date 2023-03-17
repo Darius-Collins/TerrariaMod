@@ -1,6 +1,7 @@
 {
   "replace": true,
   "values": [
-
+    "terrariamod:meteorite_block",
+    "terrariamod:meteorite_ore"
   ]
 }

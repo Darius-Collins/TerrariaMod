@@ -22,6 +22,14 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.TUNGSTEN_ORE.getHolder().get(),
                     commonOrePlacement( 12, // veins per chunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(100)))));
+
+    public static final RegistryObject<PlacedFeature> METEORITE_CRATER_PLACED = PLACED_FEATURES.register("meteorite_crater_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.METEORITE_CRATER.getHolder().get(), List.of(
+                    RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(),
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(100), VerticalAnchor.absolute(200)),
+                    BiomeFilter.biome())));
+
+
     public static void register(IEventBus eventBus) {
         PLACED_FEATURES.register(eventBus);
     }
