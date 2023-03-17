@@ -19,7 +19,7 @@ public class ModToolTiers {
         PLATINUM = TierSortingRegistry.registerTier(
                 new ForgeTier(3, 1000, 9, 1, 24,
                         ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
-                new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.IRON), List.of());
+                new ResourceLocation(TerrariaMod.MOD_ID, "platinum"), List.of(Tiers.DIAMOND), List.of());
     }
 
     static {
