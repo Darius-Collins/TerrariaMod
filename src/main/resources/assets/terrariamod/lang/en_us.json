@@ -8,6 +8,8 @@
   "item.terrariamod.tungsten_axe": "Tungsten Axe",
   "item.terrariamod.tungsten_sword": "Tungsten Sword",
   "item.terrariamod.tungsten_shovel": "Tungsten Shovel",
+  "item.terrariamod.tungsten_hoe": "Tungsten Hoe",
+
 
   "block.terrariamod.platinum_ore": "Platinum Ore",
   "block.terrariamod.deepslate_platinum_ore": "Deepslate Platinum Ore",
@@ -15,6 +17,8 @@
   "item.terrariamod.platinum_ingot" : "Platinum Ingot",
   "block.terrariamod.block_of_platinum": "Block of Platinum",
   "item.terrariamod.platinum_pickaxe" : "Platinum Pickaxe",
+  "item.terrariamod.platinum_axe": "Platinum Axe",
+
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }
