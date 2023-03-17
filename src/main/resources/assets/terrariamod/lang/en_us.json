@@ -18,6 +18,9 @@
   "block.terrariamod.block_of_platinum": "Block of Platinum",
   "item.terrariamod.platinum_pickaxe" : "Platinum Pickaxe",
   "item.terrariamod.platinum_axe": "Platinum Axe",
+  "item.terrariamod.platinum_sword": "Platinum Sword",
+  "item.terrariamod.platinum_shovel": "Platinum Shovel",
+  "item.terrariamod.platinum_hoe": "Platinum Hoe",
 
 
   "itemGroup.terraria_tab" : "Terraria Items"

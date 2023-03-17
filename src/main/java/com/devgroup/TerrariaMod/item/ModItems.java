@@ -47,13 +47,26 @@ public class ModItems
     public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
 
+    public static final RegistryObject<SwordItem> PLATINUM_SWORD = ITEMS.register("platinum_sword",
+            () -> new SwordItem(ModToolTiers.PLATINUM, 5, -2.2f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
+    public static final RegistryObject<ShovelItem> PLATINUM_SHOVEL = ITEMS.register("platinum_shovel",
+            () -> new ShovelItem(ModToolTiers.PLATINUM, 3, -2.6f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
     public static final RegistryObject<PickaxeItem> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
             () -> new PickaxeItem(ModToolTiers.PLATINUM, 3, -2.4f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
 
     public static final RegistryObject<AxeItem> PLATINUM_AXE = ITEMS.register("platinum_axe",
-            () -> new AxeItem(ModToolTiers.PLATINUM, 7, -3f,
+            () -> new AxeItem(ModToolTiers.PLATINUM, 7, -2.8f,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
+    public static final RegistryObject<HoeItem> PLATINUM_HOE = ITEMS.register("platinum_hoe",
+            () -> new HoeItem(ModToolTiers.PLATINUM, -1, -0.7f,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB).stacksTo(1)));
+
 
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));
