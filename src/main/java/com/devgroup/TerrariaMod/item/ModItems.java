@@ -124,7 +124,7 @@ public class ModItems
         public static final ArmorMaterial COPPER = new ModArmorMaterial(
                 "copper",
                 300,
-                new int[] { 2, 4, 5, 1 },
+                new int[] { 1, 2, 3, 1 },
                 30,
                 SoundEvents.ARMOR_EQUIP_IRON,
                 0.0f,
