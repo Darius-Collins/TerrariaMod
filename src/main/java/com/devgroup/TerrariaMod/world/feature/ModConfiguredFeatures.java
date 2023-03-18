@@ -50,8 +50,8 @@ public class ModConfiguredFeatures {
                             BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
                             new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 2D),
                             new GeodeCrackSettings(0.75D, 1.5D, 0), 1D, 0.1D,
-                            true, UniformInt.of(3, 4),
-                            UniformInt.of(2,3), UniformInt.of(1,2),
+                            true, UniformInt.of(4, 5),
+                            UniformInt.of(4,5), UniformInt.of(1,2),
                             -18,18, 0.075D, 1)));
 
     public static void register(IEventBus eventBus) {
