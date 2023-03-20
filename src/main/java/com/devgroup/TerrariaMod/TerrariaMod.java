@@ -1,11 +1,15 @@
 package com.devgroup.TerrariaMod;
 
 import com.devgroup.TerrariaMod.blocks.ModBlocks;
+import com.devgroup.TerrariaMod.entity.ModEntityTypes;
+import com.devgroup.TerrariaMod.entity.client.MeteorheadRenderer;
 import com.devgroup.TerrariaMod.item.ModItems;
 import com.devgroup.TerrariaMod.world.feature.ModConfiguredFeatures;
 import com.devgroup.TerrariaMod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -25,6 +29,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TerrariaMod.MOD_ID)
@@ -44,6 +49,10 @@ public class TerrariaMod
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
+
+        GeckoLib.initialize();
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -57,12 +66,10 @@ public class TerrariaMod
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntityTypes.METEORHEAD.get(), MeteorheadRenderer::new);
         }
     }
 }

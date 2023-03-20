@@ -2,11 +2,13 @@ package com.devgroup.TerrariaMod.item;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
 import com.devgroup.TerrariaMod.base.ModArmorMaterial;
+import com.devgroup.TerrariaMod.entity.ModEntityTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -106,6 +108,10 @@ public class ModItems
 
     public static final RegistryObject<Item> METEORITE_INGOT = ITEMS.register("meteorite_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+    public static final RegistryObject<Item> METORHEAD_SPAWN_EGG = ITEMS.register("meteorhead_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.METEORHEAD, 0x0C424e, 0xFF0000,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
 
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));

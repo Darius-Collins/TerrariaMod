@@ -25,7 +25,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> METEORITE_CRATER_PLACED = PLACED_FEATURES.register("meteorite_crater_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.METEORITE_CRATER.getHolder().get(), List.of(
-                    RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(),
+                    RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(105), VerticalAnchor.absolute(200)),
                     BiomeFilter.biome())));
 

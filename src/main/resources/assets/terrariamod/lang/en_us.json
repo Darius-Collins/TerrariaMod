@@ -37,6 +37,9 @@
   "block.terrariamod.meteorite_ore": "Meteorite Ore",
   "item.terrariamod.raw_meteorite": "Raw Meteorite",
   "item.terrariamod.meteorite_ingot": "Meteorite Ingot",
+  "item.terrariamod.meteorhead_spawn_egg": "Meteorhead Spawn Egg",
+  "entity.terrariamod.meteorhead": "Meteorhead",
+
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }

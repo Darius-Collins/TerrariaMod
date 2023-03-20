@@ -42,7 +42,7 @@ authors="Darius C, Titus D, Jacob W" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-THis is A TerRAris MoD
+This mod adds mobs and features from terraria into minecraft with it still feeling like vinilla minecraft
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.terrariamod]] #optional
