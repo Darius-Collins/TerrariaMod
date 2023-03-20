@@ -1,6 +1,10 @@
 package com.devgroup.TerrariaMod.entity.custom;
 
+import com.devgroup.TerrariaMod.entity.ai.MeteorheadAttackGoal;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -32,6 +36,9 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 public class MeteorHeadEntity extends Monster implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
+    private static final EntityDataAccessor<Boolean> ATTACKING =
+            SynchedEntityData.defineId(MeteorHeadEntity.class, EntityDataSerializers.BOOLEAN);
+
     public MeteorHeadEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
         super(p_33002_, p_33003_);
     }
@@ -40,15 +47,15 @@ public class MeteorHeadEntity extends Monster implements IAnimatable {
         return Monster.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 25.0D)
                 .add(Attributes.ATTACK_DAMAGE, 2.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.ATTACK_SPEED, 0.6f)
                 .add(Attributes.MOVEMENT_SPEED, 0.15f).build();
     }
 
     @Override
     protected void registerGoals() {
-
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
+        this.goalSelector.addGoal(2, new MeteorheadAttackGoal(this, 0.6D, false));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.6D, false));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 
@@ -58,49 +65,62 @@ public class MeteorHeadEntity extends Monster implements IAnimatable {
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
     }
 
-    private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().loop("animation.meteorhead.walk"));
             return PlayState.CONTINUE;
         }
-
-        event.getController().setAnimation(new AnimationBuilder().loop("animation.meteorhead.idle"));
+        event.getController().setAnimation(new AnimationBuilder().playOnce("animation.meteorhead.idle"));
         return PlayState.CONTINUE;
     }
 
-    private PlayState attackPredicate(AnimationEvent animationEvent) {
-        if (this.swinging && animationEvent.getController().getAnimationState().equals(AnimationState.Stopped)) {
-            animationEvent.getController().markNeedsReload();
-            animationEvent.getController().setAnimation(new AnimationBuilder().playOnce("animation.meteorhead.attack"));
-            this.swinging = true;
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().playOnce("animation.meteorhead.attack"));
+        }
+        return PlayState.CONTINUE;
+    }
+
+        @Override
+        public void registerControllers (AnimationData data){
+            data.addAnimationController(new AnimationController(this, "controller",
+                    10, this::predicate));
+            data.addAnimationController(new AnimationController(this, "attackController",
+                    0, this::attackPredicate));
         }
 
-        return PlayState.CONTINUE;
+        @Override
+        public AnimationFactory getFactory () {
+            return factory;
+        }
+        protected void playStepSound (BlockPos pos, BlockState blockIn){
+            this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);
+        }
+        protected SoundEvent getAmbientSound () {
+            return SoundEvents.BLAZE_AMBIENT;
+        }
+        protected SoundEvent getHurtSound (DamageSource damageSourceIn){
+            return SoundEvents.BLAZE_HURT;
+        }
+        protected SoundEvent getDeathSound () {
+            return SoundEvents.BLAZE_DEATH;
+        }
+        protected float getSoundVolume () {
+            return 0.1F;
+        }
+
+        public void setAttacking ( boolean attacking){
+            this.entityData.set(ATTACKING, attacking);
+        }
+
+        public boolean isAttacking () {
+            return this.entityData.get(ATTACKING);
+        }
+
+        @Override
+        protected void defineSynchedData () {
+            super.defineSynchedData();
+            this.entityData.define(ATTACKING, false);
+        }
     }
-
-    @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller",
-                0, this::predicate));
-        data.addAnimationController(new AnimationController(this, "attackController",
-                0, this::attackPredicate));
-    }
-
-
-    @Override
-    public AnimationFactory getFactory() {
-        return factory;
-    }
-
-    protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);
-    }
-
-    protected SoundEvent getAmbientSound() { return SoundEvents.BLAZE_AMBIENT; }
-
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) { return SoundEvents.BLAZE_HURT; }
-
-    protected SoundEvent getDeathSound() { return SoundEvents.BLAZE_DEATH; }
-
-    protected float getSoundVolume() { return 0.01F; }
-}

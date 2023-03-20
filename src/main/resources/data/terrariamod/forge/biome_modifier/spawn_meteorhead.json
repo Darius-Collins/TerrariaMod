@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:desert"
+  ],
+  "spawners": {
+    "type": "terrariamod:meteorhead",
+    "weight": 150,
+    "minCount": 1,
+    "maxCount" : 5
+  }
+}

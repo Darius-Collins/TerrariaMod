@@ -18,6 +18,6 @@ public class MeteorheadModel extends AnimatedGeoModel<MeteorHeadEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(MeteorHeadEntity animatable) {
-        return new ResourceLocation(TerrariaMod.MOD_ID, "animations/meteor_head.animation.json");
+        return new ResourceLocation(TerrariaMod.MOD_ID, "animations/meteorhead.animation.json");
     }
 }
