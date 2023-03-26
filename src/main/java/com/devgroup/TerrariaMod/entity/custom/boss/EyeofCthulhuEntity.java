@@ -43,6 +43,7 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     private static final EntityDataAccessor<Integer> DATA_ID_INV = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
     public static final int CTHULHU_SPAWN_Y = 128;
 
+
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.BOOLEAN);
     private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
