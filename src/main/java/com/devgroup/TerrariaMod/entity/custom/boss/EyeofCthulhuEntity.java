@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -39,6 +40,7 @@ import java.util.function.Predicate;
 
 public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private static final EntityDataAccessor<Integer> DATA_ID_INV = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
     public static final int CTHULHU_SPAWN_Y = 128;
 
     private static final EntityDataAccessor<Boolean> ATTACKING =
@@ -148,6 +150,9 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+    public int getInvulnerableTicks() {
+        return this.entityData.get(DATA_ID_INV);
     }
 
     class CthulhuDoNothingGoal extends Goal {
