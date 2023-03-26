@@ -2,6 +2,7 @@ package com.devgroup.TerrariaMod.event;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
 import com.devgroup.TerrariaMod.entity.ModEntityTypes;
+import com.devgroup.TerrariaMod.entity.custom.boss.EyeofCthulhuEntity;
 import com.devgroup.TerrariaMod.entity.custom.MeteorHeadEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,7 @@ public class ModEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.METEORHEAD.get(), MeteorHeadEntity.setAttributes());
+            event.put(ModEntityTypes.EYEOFCTHULHU.get(), EyeofCthulhuEntity.setAttributes());
         }
     }
 }

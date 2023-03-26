@@ -38,8 +38,9 @@
   "item.terrariamod.raw_meteorite": "Raw Meteorite",
   "item.terrariamod.meteorite_ingot": "Meteorite Ingot",
   "item.terrariamod.meteorhead_spawn_egg": "Meteorhead Spawn Egg",
+  "item.terrariamod.eyeofcthulhu_spawn_egg": "Eye of Cthulhu Spawn Egg",
   "entity.terrariamod.meteorhead": "Meteorhead",
-
+  "entity.terrariamod.eyeofcthulhu": "Eye of Cthulhu",
 
   "itemGroup.terraria_tab" : "Terraria Items"
 }

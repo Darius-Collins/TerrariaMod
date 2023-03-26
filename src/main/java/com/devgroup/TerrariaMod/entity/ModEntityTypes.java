@@ -1,6 +1,7 @@
 package com.devgroup.TerrariaMod.entity;
 
 import com.devgroup.TerrariaMod.TerrariaMod;
+import com.devgroup.TerrariaMod.entity.custom.boss.EyeofCthulhuEntity;
 import com.devgroup.TerrariaMod.entity.custom.MeteorHeadEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(MeteorHeadEntity::new, MobCategory.MONSTER)
                             .sized(0.7f, 1f) //hitbox size
                             .build(new ResourceLocation(TerrariaMod.MOD_ID, "meteorhead").toString()));
+
+    public static final RegistryObject<EntityType<EyeofCthulhuEntity>> EYEOFCTHULHU =
+            ENTITY_TYPES.register("eyeofcthulhu",
+                    () -> EntityType.Builder.of(EyeofCthulhuEntity::new, MobCategory.MONSTER)
+                            .sized(1f, 1f) //hitbox size
+                            .build(new ResourceLocation(TerrariaMod.MOD_ID, "eyeofcthulhu").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

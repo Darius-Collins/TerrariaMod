@@ -113,6 +113,11 @@ public class ModItems
             () -> new ForgeSpawnEggItem(ModEntityTypes.METEORHEAD, 0x0C424e, 0xFF0000,
                     new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
 
+    public static final RegistryObject<Item> EYEOFCTHULHU_SPAWN_EGG = ITEMS.register("eyeofcthulhu_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.EYEOFCTHULHU, 0x0C424e, 0xFF0000,
+                    new Item.Properties().tab(ModCreativeModeTab.TERRARIA_TAB)));
+
+
     public static final RegistryObject<Item> TERRARIA_LOGO = ITEMS.register("terraria_logo",
             () -> new Item(new Item.Properties()));
 

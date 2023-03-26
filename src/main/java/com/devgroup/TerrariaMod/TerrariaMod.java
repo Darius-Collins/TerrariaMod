@@ -2,6 +2,7 @@ package com.devgroup.TerrariaMod;
 
 import com.devgroup.TerrariaMod.blocks.ModBlocks;
 import com.devgroup.TerrariaMod.entity.ModEntityTypes;
+import com.devgroup.TerrariaMod.entity.client.EyeofCthulhuRenderer;
 import com.devgroup.TerrariaMod.entity.client.MeteorheadRenderer;
 import com.devgroup.TerrariaMod.item.ModItems;
 import com.devgroup.TerrariaMod.world.feature.ModConfiguredFeatures;
@@ -78,6 +79,7 @@ public class TerrariaMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.METEORHEAD.get(), MeteorheadRenderer::new);
+            EntityRenderers.register(ModEntityTypes.EYEOFCTHULHU.get(), EyeofCthulhuRenderer::new);
         }
     }
 }
