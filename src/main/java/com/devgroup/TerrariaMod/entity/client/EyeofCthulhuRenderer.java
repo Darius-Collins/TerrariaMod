@@ -14,7 +14,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class EyeofCthulhuRenderer extends GeoEntityRenderer<EyeofCthulhuEntity> {
     public EyeofCthulhuRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new EyeofCthulhuModel());
-        this.shadowRadius = 0.5f;
+        this.shadowRadius = 1f;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class EyeofCthulhuRenderer extends GeoEntityRenderer<EyeofCthulhuEntity> 
                                     @Nullable MultiBufferSource bufferSource,
                                     @Nullable VertexConsumer buffer, int packedLight,
                                     ResourceLocation texture) {
-        poseStack.scale(2f, 2F, 2F); //how big entity should be
+        poseStack.scale(6f, 6F, 6F); //how big entity should be
 
         return super.getRenderType(animatable, partialTick, poseStack, bufferSource, buffer, packedLight, texture);
     }

@@ -1,6 +1,8 @@
 package com.devgroup.TerrariaMod.entity.custom.boss;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -36,12 +38,18 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private static final EntityDataAccessor<Integer> DATA_TARGET_A = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_TARGET_B = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_TARGET_C = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
+    private static final List<EntityDataAccessor<Integer>> DATA_TARGETS = ImmutableList.of(DATA_TARGET_A, DATA_TARGET_B, DATA_TARGET_C);
     private static final EntityDataAccessor<Integer> DATA_ID_INV = SynchedEntityData.defineId(EyeofCthulhuEntity.class, EntityDataSerializers.INT);
     public static final int CTHULHU_SPAWN_Y = 128;
+    private static final int INVISIBLE_TICKS = 50;
 
 
     private static final EntityDataAccessor<Boolean> ATTACKING =
@@ -53,7 +61,7 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
 
     public EyeofCthulhuEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
         super(p_33002_, p_33003_);
-        this.moveControl = new FlyingMoveControl(this, 10, true);
+        this.moveControl = new FlyingMoveControl(this, 2, true);
         this.setHealth(this.getMaxHealth());
         this.xpReward = 50;
         this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
@@ -67,7 +75,7 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     }
 
     public void tick() {
-        this.noPhysics = true;
+        this.noPhysics = false;
         super.tick();
         this.noPhysics = false;
         this.setNoGravity(true);
@@ -80,14 +88,27 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
         }
     }
 
+    protected void customServerAiStep() {
+        if (this.getInvisibleTicks() > 0) {
+            int k2 = this.getInvisibleTicks() - 1;
+            this.bossEvent.setProgress((float) (1.0F - (float)k2 / 50.0));
+            if (k2 <= 0) {
+            }
+            this.setInvisibleTicks();
+        } else {
+            this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
+        }
+    }
+
 
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 4.0D)
+                .add(Attributes.MAX_HEALTH, 100.0D)
                 .add(Attributes.ATTACK_DAMAGE, 2.0f)
                 .add(Attributes.ATTACK_SPEED, 0.6f)
-                .add(Attributes.FLYING_SPEED, 1.2f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 10)
+                .add(Attributes.FLYING_SPEED, 2.4f)
                 .add(Attributes.FOLLOW_RANGE, 100D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4f).build();
     }
@@ -141,6 +162,23 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     protected void defineSynchedData () {
         super.defineSynchedData();
         this.entityData.define(ATTACKING, false);
+        this.entityData.define(DATA_TARGET_A, 0);
+        this.entityData.define(DATA_TARGET_B, 0);
+        this.entityData.define(DATA_TARGET_C, 0);
+        this.entityData.define(DATA_ID_INV, 0);
+    }
+
+    public void addAdditionalSaveData(CompoundTag p_31485_) {
+        super.addAdditionalSaveData(p_31485_);
+        p_31485_.putInt("Invis", this.getInvisibleTicks());
+    }
+    public void readAdditionalSaveData(CompoundTag p_31474_) {
+        super.readAdditionalSaveData(p_31474_);
+        this.setInvisibleTicks();
+        if (this.hasCustomName()) {
+            this.bossEvent.setName(this.getDisplayName());
+        }
+
     }
 
     @Override
@@ -152,9 +190,21 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
     public AnimationFactory getFactory() {
         return factory;
     }
-    public int getInvulnerableTicks() {
+    public int getInvisibleTicks() {
         return this.entityData.get(DATA_ID_INV);
     }
+
+    public void setInvisibleTicks() {
+        this.entityData.set(DATA_ID_INV, 0);
+    }
+
+    public int getAlternativeTarget(int p_31513_) {
+        return this.entityData.get(DATA_TARGETS.get(p_31513_));
+    }
+    public void setAlternativeTarget(int p_31455_, int p_31456_) {
+        this.entityData.set(DATA_TARGETS.get(p_31455_), p_31456_);
+    }
+
 
     class CthulhuDoNothingGoal extends Goal {
         public CthulhuDoNothingGoal() {
@@ -163,7 +213,7 @@ public class EyeofCthulhuEntity extends Monster implements Enemy, IAnimatable {
 
         @Override
         public boolean canUse() {
-            return false;
+            return EyeofCthulhuEntity.this.getInvisibleTicks() > 0;
         }
     }
 }

@@ -24,7 +24,8 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<EyeofCthulhuEntity>> EYEOFCTHULHU =
             ENTITY_TYPES.register("eyeofcthulhu",
                     () -> EntityType.Builder.of(EyeofCthulhuEntity::new, MobCategory.MONSTER)
-                            .sized(1f, 1f) //hitbox size
+                            .sized(2f, 5f) //hitbox size
+                            .fireImmune()
                             .build(new ResourceLocation(TerrariaMod.MOD_ID, "eyeofcthulhu").toString()));
 
     public static void register(IEventBus eventBus) {
